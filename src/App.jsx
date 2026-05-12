@@ -28,6 +28,17 @@ const projects = [
     outcome:
       "Created a more trustworthy digital presence that made the hospital easier to understand and simpler to contact.",
   },
+  {
+    name: "Velora Arts Academy - Multi-Speciality Creative Institute Website",
+    category: "Website Design",
+    liveUrl: "https://class-two-theta.vercel.app/",
+    problem:
+      "The academy needed a premium online presence that could professionally showcase its dance, zumba, music, and sketch classes while making it easier for students and parents to explore programs and connect.",
+    solution:
+      "Designed and developed a modern cinematic website with a luxury visual style, structured program sections, gallery showcases, class schedules, testimonials, and clear inquiry flows.",
+    outcome:
+      "Created a stronger digital identity for the academy, making the brand feel more professional, trustworthy, and visually memorable for new student inquiries.",
+  },
 ];
 
 const contactLinks = {
