@@ -40,6 +40,17 @@ const projects = [
       "Created a memorable digital identity that elevated the academy's brand perception and provided an engaging experience for prospective students and parents.",
   },
   {
+    name: "Shringar Studio - Luxury Beauty Salon Website",
+    category: "Website Design",
+    liveUrl: "https://shringar-two.vercel.app/",
+    problem:
+      "The beauty salon needed a premium digital presence that could reflect its brand identity, showcase beauty services professionally, and encourage potential clients to book appointments or make inquiries.",
+    solution:
+      "Designed and developed an elegant, highly visual website with luxury-inspired aesthetics, smooth animations, service showcases, portfolio galleries, customer testimonials, and clear call-to-action sections.",
+    outcome:
+      "Created a sophisticated online presence that enhanced the salon's brand perception, built customer trust, and provided a more engaging experience for prospective clients.",
+  },
+  {
     name: "City Care - Multispeciality Hospital Website",
     category: "Website Design",
     liveUrl: "https://city-care-surat.vercel.app/",
@@ -50,6 +61,7 @@ const projects = [
     outcome:
       "Created a more trustworthy digital presence that made the hospital easier to understand and simpler to contact.",
   },
+
   {
     name: "Velora Arts Academy - Multi-Speciality Creative Institute Website",
     category: "Website Design",
