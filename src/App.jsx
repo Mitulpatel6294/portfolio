@@ -18,6 +18,28 @@ const services = [
 
 const projects = [
   {
+    name: "Saffron Flame - Premium Restaurant Website",
+    category: "Website Design",
+    liveUrl: "https://restaurant-vcxv.vercel.app/",
+    problem:
+      "The restaurant needed a modern digital presence that could showcase its dining experience, menu offerings, and brand identity while encouraging more customer visits and reservations.",
+    solution:
+      "Designed and developed a visually rich restaurant website with immersive animations, elegant layouts, featured menu sections, customer testimonials, and clear call-to-action areas.",
+    outcome:
+      "Created a premium online experience that strengthened the restaurant's brand image, improved customer engagement, and made the business more appealing to potential diners.",
+  },
+  {
+    name: "Harmony Beats - Music Academy Website",
+    category: "Website Design",
+    liveUrl: "https://music-sepia-theta.vercel.app/",
+    problem:
+      "The music academy needed a creative and professional online presence to showcase its classes, instructors, and artistic identity while attracting new students.",
+    solution:
+      "Designed and developed a highly interactive and animated website with a cinematic visual style, program highlights, instructor showcases, gallery sections, and social media integration.",
+    outcome:
+      "Created a memorable digital identity that elevated the academy's brand perception and provided an engaging experience for prospective students and parents.",
+  },
+  {
     name: "City Care - Multispeciality Hospital Website",
     category: "Website Design",
     liveUrl: "https://city-care-bice.vercel.app/",
