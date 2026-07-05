@@ -2,7 +2,7 @@ const services = [
   {
     title: "Business Website Design",
     description:
-      "Clear, modern websites built to help small businesses present their services professionally and convert more visitors into enquiries.",
+      "Clear, modern websites built to help businesses present their services professionally and convert more visitors into enquiries.",
   },
   {
     title: "Website Redesign",
