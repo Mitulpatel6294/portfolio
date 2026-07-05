@@ -18,7 +18,7 @@ const services = [
 
 const projects = [
   {
-    name: "Saffron Flame - Premium Restaurant Website",
+    name: "Aurum - Premium Restaurant Website",
     category: "Website Design",
     liveUrl: "https://restaurant-vcxv.vercel.app/",
     problem:
@@ -29,7 +29,7 @@ const projects = [
       "Created a premium online experience that strengthened the restaurant's brand image, improved customer engagement, and made the business more appealing to potential diners.",
   },
   {
-    name: "Harmony Beats - Music Academy Website",
+    name: "Swara - Music Academy Website",
     category: "Website Design",
     liveUrl: "https://music-sepia-theta.vercel.app/",
     problem:
