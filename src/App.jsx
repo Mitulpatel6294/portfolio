@@ -42,7 +42,7 @@ const projects = [
   {
     name: "City Care - Multispeciality Hospital Website",
     category: "Website Design",
-    liveUrl: "https://city-care-bice.vercel.app/",
+    liveUrl: "https://city-care-surat.vercel.app/",
     problem:
       "The hospital needed a clearer online presence so patients could quickly understand services and feel confident contacting the team.",
     solution:
