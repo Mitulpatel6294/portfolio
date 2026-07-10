@@ -24,7 +24,7 @@ const projects = [
     name: "Aurum - Premium Restaurant Website",
     category: "Website Design",
     liveUrl: "https://restaurant-vcxv.vercel.app/",
-    image: "/images/project-aurum.png",
+    image: "/images/project-aurum.webp",
     problem:
       "The restaurant struggled to show its high-end ambiance online, causing potential guests to choose competitors for special occasions.",
     solution:
@@ -36,7 +36,7 @@ const projects = [
     name: "Swara - Music Academy Website",
     category: "Website Design",
     liveUrl: "https://music-sepia-theta.vercel.app/",
-    image: "/images/project-swara.png",
+    image: "/images/project-swara.webp",
     problem:
       "Prospective students had difficulty finding class schedules and faculty details, leading to high drop-off rates on the previous site.",
     solution:
@@ -48,7 +48,7 @@ const projects = [
     name: "Shringar Studio - Luxury Beauty Salon Website",
     category: "Website Design",
     liveUrl: "https://shringar-two.vercel.app/",
-    image: "/images/project-shringar.jpg",
+    image: "/images/project-shringar.webp",
     problem:
       "The salon relied entirely on social media for bookings and lacked a centralized portfolio to display bridal makeup work to high-ticket clients.",
     solution:
@@ -60,7 +60,7 @@ const projects = [
     name: "City Care - Multispeciality Hospital Website",
     category: "Website Design",
     liveUrl: "https://city-care-surat.vercel.app/",
-    image: "/images/project-city-care.png",
+    image: "/images/project-city-care.webp",
     problem:
       "Patients were confused by disorganized medical department lists and could not easily find emergency contact numbers on mobile devices.",
     solution:
@@ -73,7 +73,7 @@ const projects = [
     name: "Velora Arts Academy - Multi-Speciality Creative Institute Website",
     category: "Website Design",
     liveUrl: "https://class-two-theta.vercel.app/",
-    image: "/images/project-velora.jpg",
+    image: "/images/project-velora.webp",
     problem:
       "The institute's diverse programs like dance, music, and fine arts were tangled together on a single page, confusing parents trying to register their kids.",
     solution:
@@ -214,7 +214,7 @@ function App() {
                     className="project-image-container"
                     onTouchStart={() => { }}
                   >
-                    <img src={project.image} alt={`${project.name} screenshot`} loading="lazy" className="project-image" />
+                    <img src={project.image} alt={`${project.name} screenshot`} loading="lazy" width="800" height="450" className="project-image" />
                   </a>
                 )}
 
