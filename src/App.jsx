@@ -1,16 +1,19 @@
 const services = [
   {
     title: "Business Website Design",
+    subtitle: "For businesses ready to invest in growth",
     description:
       "Clear, modern websites built to help businesses present their services professionally and convert more visitors into enquiries.",
   },
   {
     title: "Website Redesign",
+    subtitle: "For businesses ready to invest in growth",
     description:
       "Refresh outdated websites with better structure, cleaner visuals, and a stronger message so your business feels more credible online.",
   },
   {
     title: "Google Business Profile Optimization",
+    subtitle: "For businesses who want visibility without a full website",
     description:
       "Improve how your business appears locally with a better-optimized profile that supports visibility, trust, and customer actions.",
   },
@@ -21,57 +24,62 @@ const projects = [
     name: "Aurum - Premium Restaurant Website",
     category: "Website Design",
     liveUrl: "https://restaurant-vcxv.vercel.app/",
+    image: "/images/project-aurum.png",
     problem:
-      "The restaurant needed a modern digital presence that could showcase its dining experience, menu offerings, and brand identity while encouraging more customer visits and reservations.",
+      "The restaurant struggled to show its high-end ambiance online, causing potential guests to choose competitors for special occasions.",
     solution:
-      "Designed and developed a visually rich restaurant website with immersive animations, elegant layouts, featured menu sections, customer testimonials, and clear call-to-action areas.",
+      "Built a custom web platform featuring an interactive visual menu, high-resolution photo galleries, and integrated table booking functionality.",
     outcome:
-      "Created a premium online experience that strengthened the restaurant's brand image, improved customer engagement, and made the business more appealing to potential diners.",
+      "Gained a steady increase in weekend table reservations booked directly through the site.",
   },
   {
     name: "Swara - Music Academy Website",
     category: "Website Design",
     liveUrl: "https://music-sepia-theta.vercel.app/",
+    image: "/images/project-swara.png",
     problem:
-      "The music academy needed a creative and professional online presence to showcase its classes, instructors, and artistic identity while attracting new students.",
+      "Prospective students had difficulty finding class schedules and faculty details, leading to high drop-off rates on the previous site.",
     solution:
-      "Designed and developed a highly interactive and animated website with a cinematic visual style, program highlights, instructor showcases, gallery sections, and social media integration.",
+      "Developed a structured curriculum portal with filtered class browsing and direct trial booking forms.",
     outcome:
-      "Created a memorable digital identity that elevated the academy's brand perception and provided an engaging experience for prospective students and parents.",
+      "Received twice as many trial class requests compared to the old website.",
   },
   {
     name: "Shringar Studio - Luxury Beauty Salon Website",
     category: "Website Design",
     liveUrl: "https://shringar-two.vercel.app/",
+    image: "/images/project-shringar.jpg",
     problem:
-      "The beauty salon needed a premium digital presence that could reflect its brand identity, showcase beauty services professionally, and encourage potential clients to book appointments or make inquiries.",
+      "The salon relied entirely on social media for bookings and lacked a centralized portfolio to display bridal makeup work to high-ticket clients.",
     solution:
-      "Designed and developed an elegant, highly visual website with luxury-inspired aesthetics, smooth animations, service showcases, portfolio galleries, customer testimonials, and clear call-to-action sections.",
+      "Created a categorized gallery site showcasing distinct beauty services alongside a prominent WhatsApp consultation link.",
     outcome:
-      "Created a sophisticated online presence that enhanced the salon's brand perception, built customer trust, and provided a more engaging experience for prospective clients.",
+      "Secured more high-value bridal makeup bookings from local search traffic.",
   },
   {
     name: "City Care - Multispeciality Hospital Website",
     category: "Website Design",
     liveUrl: "https://city-care-surat.vercel.app/",
+    image: "/images/project-city-care.png",
     problem:
-      "The hospital needed a clearer online presence so patients could quickly understand services and feel confident contacting the team.",
+      "Patients were confused by disorganized medical department lists and could not easily find emergency contact numbers on mobile devices.",
     solution:
-      "Designed a clean, structured website with better content flow, stronger calls to action, and a professional visual tone.",
+      "Implemented a clear navigation system with dedicated department pages and a sticky emergency contact banner.",
     outcome:
-      "Created a more trustworthy digital presence that made the hospital easier to understand and simpler to contact.",
+      "Helped patients find the right doctors faster, reducing front-desk calls about basic facility details.",
   },
 
   {
     name: "Velora Arts Academy - Multi-Speciality Creative Institute Website",
     category: "Website Design",
     liveUrl: "https://class-two-theta.vercel.app/",
+    image: "/images/project-velora.jpg",
     problem:
-      "The academy needed a premium online presence that could professionally showcase its dance, zumba, music, and sketch classes while making it easier for students and parents to explore programs and connect.",
+      "The institute's diverse programs like dance, music, and fine arts were tangled together on a single page, confusing parents trying to register their kids.",
     solution:
-      "Designed and developed a modern cinematic website with a luxury visual style, structured program sections, gallery showcases, class schedules, testimonials, and clear inquiry flows.",
+      "Designed segmented program landing pages with individual faculty profiles and targeted registration funnels for each discipline.",
     outcome:
-      "Created a stronger digital identity for the academy, making the brand feel more professional, trustworthy, and visually memorable for new student inquiries.",
+      "Filled all available slots for the upcoming summer batch entirely through online registrations.",
   },
 ];
 
@@ -109,12 +117,16 @@ function App() {
         <section className="hero" id="hero">
           <div className="hero-copy fade-up">
             <span className="eyebrow">Freelance Web Designer in Surat</span>
-            <h1>Helping businesses grow online with clear, focused websites.</h1>
+            <h1>Websites for business owners who want to grow, not just have a website.</h1>
             <p className="hero-text">
               I design professional websites and improve local presence so
               businesses can build trust, communicate value clearly, and turn
               more visitors into enquiries.
             </p>
+
+            <div className="hero-cta-context" style={{ marginBottom: '12px', fontSize: '0.9rem', color: '#666' }}>
+              <strong>Free Google Business Profile audit &middot; Websites from ₹2,999</strong>
+            </div>
 
             <div className="hero-actions">
               <a className="button button-primary" href={contactLinks.whatsapp} target="_blank" rel="noreferrer">
@@ -160,6 +172,9 @@ function App() {
             {services.map((service) => (
               <article className="card fade-up" key={service.title}>
                 <h3>{service.title}</h3>
+                <p className="service-subtitle" style={{ fontSize: '0.9rem', fontWeight: 500, margin: '8px 0 12px', color: '#555' }}>
+                  {service.subtitle}
+                </p>
                 <p>{service.description}</p>
               </article>
             ))}
@@ -185,11 +200,23 @@ function App() {
                     className="button button-secondary"
                     href={project.liveUrl}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                   >
                     View Live Site
                   </a>
                 </div>
+
+                {project.image && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-image-container"
+                    onTouchStart={() => { }}
+                  >
+                    <img src={project.image} alt={`${project.name} screenshot`} loading="lazy" className="project-image" />
+                  </a>
+                )}
 
                 <div className="project-content">
                   <div>
