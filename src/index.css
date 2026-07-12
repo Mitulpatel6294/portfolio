@@ -275,6 +275,38 @@ a {
   margin-top: 30px;
 }
 
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.filter-tab {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  min-height: 40px;
+  padding: 0 18px;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 180ms ease;
+}
+
+.filter-tab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 .project-card {
   padding: 30px;
   border-radius: 28px;
@@ -442,5 +474,52 @@ a {
 
   .button {
     width: 100%;
+  }
+}
+
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -4px 24px rgba(15, 23, 42, 0.06);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 250ms ease-out, opacity 250ms ease-out, visibility 250ms;
+}
+
+.sticky-cta-bar.visible {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.sticky-cta-content {
+  width: 100%;
+  max-width: 1120px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 720px) {
+  .sticky-cta-bar {
+    padding: 8px 16px;
+  }
+  .sticky-cta-content .button {
+    width: 100%;
+  }
+}
+@media (min-width: 721px) {
+  .sticky-cta-bar {
+    padding: 12px 20px;
   }
 }

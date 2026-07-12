@@ -1,13 +1,15 @@
+import { useState, useEffect, useRef } from 'react';
+
 const services = [
   {
-    title: "Business Website Design",
-    subtitle: "For businesses ready to invest in growth",
+    title: "Website Design",
+    subtitle: "For businesses that don't have a website yet",
     description:
       "Clear, modern websites built to help businesses present their services professionally and convert more visitors into enquiries.",
   },
   {
     title: "Website Redesign",
-    subtitle: "For businesses ready to invest in growth",
+    subtitle: "For businesses whose current website isn't working for them",
     description:
       "Refresh outdated websites with better structure, cleaner visuals, and a stronger message so your business feels more credible online.",
   },
@@ -22,7 +24,7 @@ const services = [
 const projects = [
   {
     name: "Aurum - Premium Restaurant Website",
-    category: "Website Design",
+    category: "Food & Hospitality",
     liveUrl: "https://restaurant-vcxv.vercel.app/",
     image: "/images/project-aurum.webp",
     problem:
@@ -34,7 +36,7 @@ const projects = [
   },
   {
     name: "Swara - Music Academy Website",
-    category: "Website Design",
+    category: "Education",
     liveUrl: "https://music-sepia-theta.vercel.app/",
     image: "/images/project-swara.webp",
     problem:
@@ -46,7 +48,7 @@ const projects = [
   },
   {
     name: "Shringar Studio - Luxury Beauty Salon Website",
-    category: "Website Design",
+    category: "Beauty & Wellness",
     liveUrl: "https://shringar-two.vercel.app/",
     image: "/images/project-shringar.webp",
     problem:
@@ -58,7 +60,7 @@ const projects = [
   },
   {
     name: "City Care - Multispeciality Hospital Website",
-    category: "Website Design",
+    category: "Healthcare",
     liveUrl: "https://city-care-surat.vercel.app/",
     image: "/images/project-city-care.webp",
     problem:
@@ -71,7 +73,7 @@ const projects = [
 
   {
     name: "Velora Arts Academy - Multi-Speciality Creative Institute Website",
-    category: "Website Design",
+    category: "Education",
     liveUrl: "https://class-two-theta.vercel.app/",
     image: "/images/project-velora.webp",
     problem:
@@ -99,6 +101,26 @@ function SectionHeading({ eyebrow, title, description }) {
 }
 
 function App() {
+  const [showSticky, setShowSticky] = useState(false);
+  const [activeCategory, setActiveCategory] = useState('All');
+  const heroRef = useRef(null);
+
+  const categories = ['All', 'Food & Hospitality', 'Beauty & Wellness', 'Education', 'Healthcare'];
+  const filteredProjects = activeCategory === 'All'
+    ? projects
+    : projects.filter(p => p.category === activeCategory);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowSticky(!entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+    if (heroRef.current) observer.observe(heroRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="page-shell">
       <header className="topbar">
@@ -114,14 +136,12 @@ function App() {
       </header>
 
       <main>
-        <section className="hero" id="hero">
+        <section className="hero" id="hero" ref={heroRef}>
           <div className="hero-copy fade-up">
             <span className="eyebrow">Freelance Web Designer in Surat</span>
             <h1>Websites for business owners who want to grow, not just have a website.</h1>
             <p className="hero-text">
-              I design professional websites and improve local presence so
-              businesses can build trust, communicate value clearly, and turn
-              more visitors into enquiries.
+              Most businesses in Surat lose customers to competitors with better Google reviews and a real website, not because they're worse, but because they're harder to find.
             </p>
 
             <div className="hero-cta-context" style={{ marginBottom: '12px', fontSize: '0.9rem', color: '#666' }}>
@@ -188,8 +208,20 @@ function App() {
             description="A simple portfolio that highlights the problem, approach, and result without unnecessary noise."
           />
 
+          <div className="filter-tabs fade-up">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                className={`filter-tab ${activeCategory === cat ? 'active' : ''}`}
+                onClick={() => setActiveCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
           <div className="project-list">
-            {projects.map((project) => (
+            {filteredProjects.map((project) => (
               <article className="project-card fade-up" key={project.name}>
                 <div className="project-header">
                   <span className="project-tag">{project.category}</span>
@@ -280,6 +312,14 @@ function App() {
           </div>
         </section>
       </main>
+
+      <div className={`sticky-cta-bar ${showSticky ? 'visible' : ''}`}>
+        <div className="sticky-cta-content">
+          <a className="button button-primary" href={contactLinks.whatsapp} target="_blank" rel="noreferrer">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
