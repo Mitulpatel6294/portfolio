@@ -32,7 +32,7 @@ const projects = [
     solution:
       "Built a custom web platform featuring an interactive visual menu, high-resolution photo galleries, and integrated table booking functionality.",
     outcome:
-      "Designed to showcase the venue's premium feel and make booking a table intuitive.",
+      "Designed for premium visual appeal and intuitive table reservations.",
   },
   {
     name: "Swara - Music Academy Website",
@@ -44,7 +44,7 @@ const projects = [
     solution:
       "Developed a structured curriculum portal with filtered class browsing and direct trial booking forms.",
     outcome:
-      "Structured to eliminate confusion and direct visitors toward an easy trial booking process.",
+      "Built to eliminate confusion and drive easy trial class bookings.",
   },
   {
     name: "Shringar Studio - Luxury Beauty Salon Website",
@@ -56,7 +56,7 @@ const projects = [
     solution:
       "Created a categorized gallery site showcasing distinct beauty services alongside a prominent WhatsApp consultation link.",
     outcome:
-      "Built to present a clear portfolio of services and guide visitors straight to a consultation.",
+      "Structured to showcase services and guide visitors straight to consultation.",
   },
   {
     name: "City Care - Multispeciality Hospital Website",
@@ -68,7 +68,7 @@ const projects = [
     solution:
       "Implemented a clear navigation system with dedicated department pages and a sticky emergency contact banner.",
     outcome:
-      "Focused on rapid information retrieval so patients can easily find departments and contact details.",
+      "Optimized for rapid patient navigation and emergency contact visibility.",
   },
 
   {
@@ -81,7 +81,7 @@ const projects = [
     solution:
       "Designed segmented program landing pages with individual faculty profiles and targeted registration funnels for each discipline.",
     outcome:
-      "Created segmented funnels so parents can browse programs without feeling overwhelmed.",
+      "Created segmented funnels for clear, overwhelm-free program browsing.",
   },
 ];
 
@@ -103,6 +103,7 @@ function SectionHeading({ eyebrow, title, description }) {
 function App() {
   const [showSticky, setShowSticky] = useState(false);
   const [activeCategory, setActiveCategory] = useState('All');
+  const [emailCopied, setEmailCopied] = useState(false);
   const heroRef = useRef(null);
 
   const categories = ['All', 'Food & Hospitality', 'Beauty & Wellness', 'Education', 'Healthcare'];
@@ -145,7 +146,7 @@ function App() {
             </p>
 
             <div className="hero-cta-context" style={{ marginBottom: '12px', fontSize: '0.9rem', color: '#666' }}>
-              <strong>Free Google Business Profile audit &middot; Websites from ₹2,999</strong>
+              <strong>Free Google Maps ranking check &middot; Websites from ₹2,999</strong>
             </div>
 
             <div className="hero-actions">
@@ -163,7 +164,7 @@ function App() {
                 <a href="tel:+919879363270">+91 9879363270</a>
               </li>
               <li>
-                <a href={contactLinks.email}>mitul4733@gmail.com</a>
+                <a href={contactLinks.email} target="_blank" rel="noreferrer">mitul4733@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -269,10 +270,10 @@ function App() {
                   <div>
                     <span className="project-label">Outcome</span>
                     <p>{project.outcome}</p>
-                    <a 
-                      href={contactLinks.whatsapp} 
-                      target="_blank" 
-                      rel="noreferrer" 
+                    <a
+                      href={contactLinks.whatsapp}
+                      target="_blank"
+                      rel="noreferrer"
                       style={{ display: "inline-block", marginTop: "14px", fontSize: "0.92rem", color: "var(--accent)", fontWeight: 600, textDecoration: "none" }}
                     >
                       Want a website like this? &rarr; Chat on WhatsApp
@@ -332,9 +333,19 @@ function App() {
               <a className="button button-primary" href={contactLinks.whatsapp} target="_blank" rel="noreferrer">
                 Message on WhatsApp
               </a>
-              <a className="button button-secondary" href={contactLinks.email}>
-                Send an Email
-              </a>
+              <button
+                className="button button-secondary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigator.clipboard.writeText("mitul4733@gmail.com").then(() => {
+                    setEmailCopied(true);
+                    setTimeout(() => setEmailCopied(false), 2000);
+                  });
+                }}
+                style={{ fontFamily: 'inherit', fontSize: 'inherit', cursor: 'pointer' }}
+              >
+                {emailCopied ? "Email copied!" : "Copy an Email"}
+              </button>
             </div>
           </div>
         </section>
