@@ -32,7 +32,7 @@ const projects = [
     solution:
       "Built a custom web platform featuring an interactive visual menu, high-resolution photo galleries, and integrated table booking functionality.",
     outcome:
-      "Gained a steady increase in weekend table reservations booked directly through the site.",
+      "Designed to showcase the venue's premium feel and make booking a table intuitive.",
   },
   {
     name: "Swara - Music Academy Website",
@@ -44,7 +44,7 @@ const projects = [
     solution:
       "Developed a structured curriculum portal with filtered class browsing and direct trial booking forms.",
     outcome:
-      "Received twice as many trial class requests compared to the old website.",
+      "Structured to eliminate confusion and direct visitors toward an easy trial booking process.",
   },
   {
     name: "Shringar Studio - Luxury Beauty Salon Website",
@@ -56,7 +56,7 @@ const projects = [
     solution:
       "Created a categorized gallery site showcasing distinct beauty services alongside a prominent WhatsApp consultation link.",
     outcome:
-      "Secured more high-value bridal makeup bookings from local search traffic.",
+      "Built to present a clear portfolio of services and guide visitors straight to a consultation.",
   },
   {
     name: "City Care - Multispeciality Hospital Website",
@@ -68,7 +68,7 @@ const projects = [
     solution:
       "Implemented a clear navigation system with dedicated department pages and a sticky emergency contact banner.",
     outcome:
-      "Helped patients find the right doctors faster, reducing front-desk calls about basic facility details.",
+      "Focused on rapid information retrieval so patients can easily find departments and contact details.",
   },
 
   {
@@ -81,7 +81,7 @@ const projects = [
     solution:
       "Designed segmented program landing pages with individual faculty profiles and targeted registration funnels for each discipline.",
     outcome:
-      "Filled all available slots for the upcoming summer batch entirely through online registrations.",
+      "Created segmented funnels so parents can browse programs without feeling overwhelmed.",
   },
 ];
 
@@ -199,9 +199,16 @@ function App() {
               </article>
             ))}
           </div>
+
+          <div className="fade-up" style={{ textAlign: "center", marginTop: "40px" }}>
+            <a className="button button-primary" href={contactLinks.whatsapp} target="_blank" rel="noreferrer">
+              Discuss your project on WhatsApp
+            </a>
+          </div>
         </section>
 
         <section className="section" id="work">
+          <p style={{ maxWidth: "720px", margin: "0 0 16px", fontSize: "0.95rem", color: "#666" }} className="fade-up">Concept projects designed to demonstrate real-world problem solving — available for live viewing.</p>
           <SectionHeading
             eyebrow="Selected Work"
             title="A small set of focused projects."
@@ -224,7 +231,7 @@ function App() {
             {filteredProjects.map((project) => (
               <article className="project-card fade-up" key={project.name}>
                 <div className="project-header">
-                  <span className="project-tag">{project.category}</span>
+                  <span className="project-tag">CONCEPT PROJECT</span>
                   <h3>{project.name}</h3>
                 </div>
                 <div className="project-actions">
@@ -262,6 +269,14 @@ function App() {
                   <div>
                     <span className="project-label">Outcome</span>
                     <p>{project.outcome}</p>
+                    <a 
+                      href={contactLinks.whatsapp} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      style={{ display: "inline-block", marginTop: "14px", fontSize: "0.92rem", color: "var(--accent)", fontWeight: 600, textDecoration: "none" }}
+                    >
+                      Want a website like this? &rarr; Chat on WhatsApp
+                    </a>
                   </div>
                 </div>
               </article>
@@ -273,22 +288,34 @@ function App() {
           <div className="fade-up">
             <SectionHeading
               eyebrow="About"
-              title="A direct and business-focused approach."
+              title="No fluff, just websites that work for your business."
               description=""
             />
           </div>
 
           <div className="about-copy fade-up-delayed">
-            <p>
-              I am Mitul Patel, a freelance web designer focused on helping
-              businesses grow online with a clean and professional digital
-              presence.
-            </p>
-            <p>
-              My work is centered on clarity: stronger messaging, better visual
-              structure, and websites that make it easier for potential customers
-              to trust your business and take the next step.
-            </p>
+            <div className="about-content-wrapper">
+              <img
+                src="/images/profile-photo.webp"
+                alt="Mitul Patel"
+                className="profile-photo"
+                loading="lazy"
+                width="160"
+                height="192"
+              />
+              <div className="about-text">
+                <p>
+                  I am Mitul Patel, a freelance web designer focused on helping
+                  businesses grow online with a clean and professional digital
+                  presence.
+                </p>
+                <p>
+                  My work is centered on clarity: stronger messaging, better visual
+                  structure, and websites that make it easier for potential customers
+                  to trust your business and take the next step.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
