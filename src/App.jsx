@@ -23,9 +23,9 @@ const services = [
 
 const projects = [
   {
-    name: "Aurum - Premium Restaurant Website",
+    name: "Rooh - Premium Restaurant Website",
     category: "Food & Hospitality",
-    liveUrl: "https://restaurant-vcxv.vercel.app/",
+    liveUrl: "https://cafe.mitul-patel.in/",
     image: "/images/project-aurum.webp",
     problem:
       "The restaurant struggled to show its high-end ambiance online, causing potential guests to choose competitors for special occasions.",
