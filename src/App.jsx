@@ -37,7 +37,7 @@ const projects = [
   {
     name: "Swara - Music Academy Website",
     category: "Education",
-    liveUrl: "https://music-sepia-theta.vercel.app/",
+    liveUrl: "https://music.mitul-patel.in/",
     image: "/images/project-swara.webp",
     problem:
       "Prospective students had difficulty finding class schedules and faculty details, leading to high drop-off rates on the previous site.",
@@ -47,21 +47,9 @@ const projects = [
       "Built to eliminate confusion and drive easy trial class bookings.",
   },
   {
-    name: "Shringar Studio - Luxury Beauty Salon Website",
-    category: "Beauty & Wellness",
-    liveUrl: "https://shringar-two.vercel.app/",
-    image: "/images/project-shringar.webp",
-    problem:
-      "The salon relied entirely on social media for bookings and lacked a centralized portfolio to display bridal makeup work to high-ticket clients.",
-    solution:
-      "Created a categorized gallery site showcasing distinct beauty services alongside a prominent WhatsApp consultation link.",
-    outcome:
-      "Structured to showcase services and guide visitors straight to consultation.",
-  },
-  {
     name: "City Care - Multispeciality Hospital Website",
     category: "Healthcare",
-    liveUrl: "https://city-care-surat.vercel.app/",
+    liveUrl: "https://citycare.mitul-patel.in/",
     image: "/images/project-city-care.webp",
     problem:
       "Patients were confused by disorganized medical department lists and could not easily find emergency contact numbers on mobile devices.",
@@ -106,7 +94,7 @@ function App() {
   const [emailCopied, setEmailCopied] = useState(false);
   const heroRef = useRef(null);
 
-  const categories = ['All', 'Food & Hospitality', 'Beauty & Wellness', 'Education', 'Healthcare'];
+  const categories = ['All', 'Food & Hospitality', 'Education', 'Healthcare'];
   const filteredProjects = activeCategory === 'All'
     ? projects
     : projects.filter(p => p.category === activeCategory);
